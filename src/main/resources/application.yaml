@@ -1,0 +1,18 @@
+#        数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+#配置mybatis规则
+#指定mybatis全局映射文件和sql映射文件
+mybatis:
+  #  config-location: classpath:mybatis/mybatis-config.xml  #全局配置文件位置,一般不适用，直接配置在yaml里面即可
+  #  这里要注意，用了config.xml就不能
+#  mapper-locations: classpath:mybatis/mapper/*.xml  #sql映射文件位置
+  configuration:
+    #    开启驼峰命名规则，也就是数据库的user_id可以对应java的userId，默认是不开启的。
+    map-underscore-to-camel-case: true
+
